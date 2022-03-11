@@ -23,32 +23,8 @@ const suggestionList = [{
 export default function Sidebar() {
     return (
         <div class="sidebar">
-            <User image="instagram/assets/img/catanacomics.svg" name="catanacomics" subname="Catana"/>
-            
-
-            <div class="sugestoes">
-                <div class="titulo">
-                    Sugestões para você
-                    <div>Ver tudo</div>
-                </div>
-
-                {suggestionList.map((element) => {
-                    return (
-                        <div class="sugestao">
-                            <div class="usuario">
-                                <img src={element.userImage} />
-                                <div class="texto">
-                                    <div class="nome">{element.userName}</div>
-                                    <div class="razao">{element.reason}</div>
-                                </div>
-                            </div>
-
-                            <div class="seguir">Seguir</div>
-                        </div>
-                    )
-                })}
-
-            </div>
+            <User image="instagram/assets/img/catanacomics.svg" name="catanacomics" subname="Catana" />
+            <Suggestions />
 
             <div class="links">
                 Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
@@ -63,11 +39,40 @@ export default function Sidebar() {
 function User(props) {
     return (
         <div class="usuario">
-            <img src={props.image}/>
+            <img src={props.image} />
             <div class="texto">
                 <strong>{props.name}</strong>
                 {props.subname}
             </div>
         </div>
+    )
+}
+function Suggestions() {
+    return (
+        < div class="sugestoes" >
+            <div class="titulo">
+                Sugestões para você
+                <div>Ver tudo</div>
+            </div>
+
+            {
+                suggestionList.map((element) => {
+                    return (
+                        <div class="sugestao">
+                            <div class="usuario">
+                                <img src={element.userImage} />
+                                <div class="texto">
+                                    <div class="nome">{element.userName}</div>
+                                    <div class="razao">{element.reason}</div>
+                                </div>
+                            </div>
+
+                            <div class="seguir">Seguir</div>
+                        </div>
+                    )
+                })
+            }
+
+        </div >
     )
 }
