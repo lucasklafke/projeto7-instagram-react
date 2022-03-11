@@ -1,13 +1,30 @@
+const suggestionList = [{
+    userName: "bad.vibes.memes",
+    userImage: "instagram/assets/img/bad.vibes.memes.svg",
+    reason: 'Segue você'
+}, {
+    userName: "chibirdart",
+    userImage: "instagram/assets/img/chibirdart.svg",
+    reason: 'Segue você'
+}, {
+    userName: "razoesparaacreditar",
+    userImage: "instagram/assets/img/razoesparaacreditar.svg",
+    reason: 'Novo no Instagram'
+}, {
+    userName: 'adorable_animals',
+    userImage: "instagram/assets/img/adorable_animals.svg",
+    reason: 'Segue você'
+}, {
+    userName: 'smallcutecats',
+    userImage: "instagram/assets/img/smallcutecats.svg",
+    reason: 'Segue você'
+}
+]
 export default function Sidebar() {
     return (
         <div class="sidebar">
-            <div class="usuario">
-                <img src="instagram/assets/img/catanacomics.svg" />
-                <div class="texto">
-                    <strong>catanacomics</strong>
-                    Catana
-                </div>
-            </div>
+            <User image="instagram/assets/img/catanacomics.svg" name="catanacomics" subname="Catana"/>
+            
 
             <div class="sugestoes">
                 <div class="titulo">
@@ -15,65 +32,22 @@ export default function Sidebar() {
                     <div>Ver tudo</div>
                 </div>
 
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="instagram/assets/img/bad.vibes.memes.svg" />
-                        <div class="texto">
-                            <div class="nome">bad.vibes.memes</div>
-                            <div class="razao">Segue você</div>
+                {suggestionList.map((element) => {
+                    return (
+                        <div class="sugestao">
+                            <div class="usuario">
+                                <img src={element.userImage} />
+                                <div class="texto">
+                                    <div class="nome">{element.userName}</div>
+                                    <div class="razao">{element.reason}</div>
+                                </div>
+                            </div>
+
+                            <div class="seguir">Seguir</div>
                         </div>
-                    </div>
+                    )
+                })}
 
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="instagram/assets/img/chibirdart.svg" />
-                        <div class="texto">
-                            <div class="nome">chibirdart</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="instagram/assets/img/razoesparaacreditar.svg" />
-                        <div class="texto">
-                            <div class="nome">razoesparaacreditar</div>
-                            <div class="razao">Novo no Instagram</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="instagram/assets/img/adorable_animals.svg" />
-                        <div class="texto">
-                            <div class="nome">adorable_animals</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
-
-                <div class="sugestao">
-                    <div class="usuario">
-                        <img src="instagram/assets/img/smallcutecats.svg" />
-                        <div class="texto">
-                            <div class="nome">smallcutecats</div>
-                            <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                </div>
             </div>
 
             <div class="links">
@@ -82,6 +56,17 @@ export default function Sidebar() {
 
             <div class="copyright">
                 © 2021 INSTAGRAM DO FACEBOOK
+            </div>
+        </div>
+    )
+}
+function User(props) {
+    return (
+        <div class="usuario">
+            <img src={props.image}/>
+            <div class="texto">
+                <strong>{props.name}</strong>
+                {props.subname}
             </div>
         </div>
     )
