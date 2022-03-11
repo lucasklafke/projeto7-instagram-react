@@ -1,77 +1,82 @@
+const listatories = [{
+    image: "instagram/assets/img/9gag.svg",
+    user: '9gag'
+}, {
+    image: "instagram/assets/img/meowed.svg",
+    user: 'meowed'
+}, {
+    image: "instagram/assets/img/9gag.svg",
+    user: '9gag'
+},
+{
+    image: "instagram/assets/img/barked.svg",
+    user: 'barked'
+},
+{
+    image: "instagram/assets/img/nathanwpylestrangeplanet.svg",
+    user: 'nathanwpylestrangeplanet'
+}, {
+    image: "instagram/assets/img/wawawicomics.svg",
+    user: 'wawawicomics'
+}, {
+    image: "instagram/assets/img/respondeai.svg",
+    user: 'respondeai'
+}, {
+    image: "instagram/assets/img/filomoderna.svg",
+    user: 'filomoderna'
+}, {
+    image: "instagram/assets/img/memeriagourmet.svg",
+    user: 'memeriagourmet'
+},
+]
+
 export default function Stories() {
+    const listatories = [{
+        image: "instagram/assets/img/9gag.svg",
+        user: '9gag'
+    }, {
+        image: "instagram/assets/img/meowed.svg",
+        user: 'meowed'
+    }, {
+        image: "instagram/assets/img/9gag.svg",
+        user: '9gag'
+    },
+    {
+        image: "instagram/assets/img/barked.svg",
+        user: 'barked'
+    },
+    {
+        image: "instagram/assets/img/nathanwpylestrangeplanet.svg",
+        user: 'nathanwpylestrangeplanet'
+    }, {
+        image: "instagram/assets/img/wawawicomics.svg",
+        user: 'wawawicomics'
+    }, {
+        image: "instagram/assets/img/respondeai.svg",
+        user: 'respondeai'
+    }, {
+        image: "instagram/assets/img/filomoderna.svg",
+        user: 'filomoderna'
+    }, {
+        image: "instagram/assets/img/memeriagourmet.svg",
+        user: 'memeriagourmet'
+    },
+    ]
     return (
         <div class="stories">
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/9gag.svg" />
-                </div>
-                <div class="usuario">
-                    9gag
-                </div>
-            </div>
+            {listatories.map((elemento) =>{
+                return (
 
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/meowed.svg" />
-                </div>
-                <div class="usuario">
-                    meowed
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/barked.svg" />
-                </div>
-                <div class="usuario">
-                    barked
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/nathanwpylestrangeplanet.svg" />
-                </div>
-                <div class="usuario">
-                    nathanwpylestrangeplanet
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/wawawicomics.svg" />
-                </div>
-                <div class="usuario">
-                    wawawicomics
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/respondeai.svg" />
-                </div>
-                <div class="usuario">
-                    respondeai
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/filomoderna.svg" />
-                </div>
-                <div class="usuario">
-                    filomoderna
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/memeriagourmet.svg" />
-                </div>
-                <div class="usuario">
-                    memeriagourmet
-                </div>
-            </div>
+                    <div class="story">
+                        <div class="imagem">
+                            <img src={elemento.image} />
+                        </div>
+                        <div class="usuario">
+                            {elemento.user}
+                        </div>
+                    </div>
+                    )
+            })}
 
             <div class="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
@@ -79,3 +84,17 @@ export default function Stories() {
         </div>
     )
 }
+
+// function Storie(elemento) {
+//     return (
+
+//     <div class="story">
+//         <div class="imagem">
+//             <img src={elemento.image} />
+//         </div>
+//         <div class="usuario">
+//             {elemento.user}
+//         </div>
+//     </div>
+//     )
+// }
