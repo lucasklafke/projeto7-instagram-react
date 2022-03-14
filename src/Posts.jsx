@@ -1,24 +1,28 @@
+const listPosts = [{
+    userImage: "instagram/assets/img/meowed.svg",
+    userName: 'meowed',
+    postImage: "instagram/assets/img/gato-telefone.svg"
+},{
+    userImage: "instagram/assets/img/barked.svg",
+    userName: 'barked',
+    postImage: "instagram/assets/img/dog.svg"
+}
+
+]
 export default function Posts() {
-    const listaPosts = [{
-        userImage: "instagram/assets/img/meowed.svg",
-        userName: 'meowed',
-        postImage: "instagram/assets/img/gato-telefone.svg"
-    },{
-        userImage: "instagram/assets/img/barked.svg",
-        userName: 'barked',
-        postImage: "instagram/assets/img/dog.svg"
-    }
-    
-    ]
     return (
         <div class="posts">
-            {listaPosts.map((element) => {
-                return (
-                    <div class="post">
+            {listPosts.map((element) => <Post postImage={element.postImage} userName={element.userName} userImage={element.userImage} />)}
+        </div>
+    )
+}
+function Post(props){
+    return (
+        <div class="post">
                         <div class="topo">
                             <div class="usuario">
-                                <img src={element.userImage} />
-                                {element.userName}
+                                <img src={props.userImage} />
+                                {props.userName}
                             </div>
                             <div class="acoes">
                                 <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -26,7 +30,7 @@ export default function Posts() {
                         </div>
 
                         <div class="conteudo">
-                            <img src={element.postImage} />
+                            <img src={props.postImage} />
                         </div>
 
                         <div class="fundo">
@@ -48,9 +52,6 @@ export default function Posts() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                )
-            })}
         </div>
     )
 }

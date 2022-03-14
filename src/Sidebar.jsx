@@ -24,8 +24,15 @@ export default function Sidebar() {
     return (
         <div class="sidebar">
             <User image="instagram/assets/img/catanacomics.svg" name="catanacomics" subname="Catana" />
-            <Suggestions />
+            <div class="sugestoes">
+                <div class="titulo">
+                    Sugestões para você
+                    <div>Ver tudo</div>
+                </div>
 
+                {suggestionList.map(element => <Suggestion userImage={element.userImage} userName={element.userName} reason={element.reason} />)}
+                
+            </div >
             <div class="links">
                 Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
             </div>
@@ -47,32 +54,18 @@ function User(props) {
         </div>
     )
 }
-function Suggestions() {
+function Suggestion(props) {
     return (
-        < div class="sugestoes" >
-            <div class="titulo">
-                Sugestões para você
-                <div>Ver tudo</div>
+        <div class="sugestao">
+            <div class="usuario">
+                <img src={props.userImage} />
+                <div class="texto">
+                    <div class="nome">{props.userName}</div>
+                    <div class="razao">{props.reason}</div>
+                </div>
             </div>
 
-            {
-                suggestionList.map((element) => {
-                    return (
-                        <div class="sugestao">
-                            <div class="usuario">
-                                <img src={element.userImage} />
-                                <div class="texto">
-                                    <div class="nome">{element.userName}</div>
-                                    <div class="razao">{element.reason}</div>
-                                </div>
-                            </div>
-
-                            <div class="seguir">Seguir</div>
-                        </div>
-                    )
-                })
-            }
-
-        </div >
+            <div class="seguir">Seguir</div>
+        </div>
     )
 }
